@@ -90,6 +90,8 @@ export class AppComponent {
   // arrow functions
   //  const resta = () => ('hola' + a)
 
-
+  public receiveData(data:any){
+    console.log('Print in father component: ', data)
+  }
 
 }
