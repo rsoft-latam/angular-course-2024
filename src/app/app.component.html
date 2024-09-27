@@ -10,3 +10,11 @@
     (sendData)="receiveData($event)"
     >
 </user-card>
+
+
+<p>RESULT:  {{result}}</p>
+<calculator 
+(sum)="onResult($event)" 
+(mul)="onResult($event)" 
+(reset)="onResult($event)">
+</calculator>
