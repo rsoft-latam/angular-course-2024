@@ -4,17 +4,18 @@
 
 <p>Only Pares {{ getArray() }}</p>
 
-<user-card 
-    name="juan" 
-    [email]="'juan@gmail.com'"
-    (sendData)="receiveData($event)"
-    >
+<user-card name="juan" [email]="'juan@gmail.com'" (sendData)="receiveData($event)">
+    <p>My HTML from father</p>
+    <button>My button from father</button>
 </user-card>
 
 
-<p>RESULT:  {{result}}</p>
-<calculator 
-(sum)="onResult($event)" 
-(mul)="onResult($event)" 
-(reset)="onResult($event)">
+<p>RESULT: {{result}}</p>
+<calculator (sum)="onResult($event)" (mul)="onResult($event)" (reset)="onResult($event)">
 </calculator>
+
+<p *ngIf="1 === 1"> variables are equals </p>
+
+@if(1 === 1) {
+   <p> new Sintax, variables are equals </p> 
+}
