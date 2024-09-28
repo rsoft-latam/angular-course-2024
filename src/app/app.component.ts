@@ -13,7 +13,7 @@ interface IPerson {
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, UserCardComponent, CalculatorComponent, CommonModule],
+  imports: [RouterOutlet, UserCardComponent, CalculatorComponent,CommonModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
