@@ -4,10 +4,17 @@
 
 <p>Only Pares {{ getArray() }}</p>
 
-<user-card name="juan" [email]="'juan@gmail.com'" (sendData)="receiveData($event)">
+<button (click)="userCardCreated = !userCardCreated">create and destroy user card</button>
+@if(userCardCreated) {
+  <user-card name="juan" [email]="'juan@gmail.com'" (sendData)="receiveData($event)">
     <p>My HTML from father</p>
     <button>My button from father</button>
-</user-card>
+  </user-card>
+} @else {
+  <p>user card destroyed</p>
+}
+
+
 
 
 <p>RESULT: {{result}}</p>
@@ -19,27 +26,22 @@
     <p>old, result is false</p>
 </ng-template>
 
-
 @if(var1 === var2) {
    <p> new Sintax, variables are equals </p> 
 } @else {
    <p> new Sintax, is false</p> 
 }
-
 <p *ngFor="let item of ['a','b','c','d']; let i = index">
     old for, value: {{item}}, index: {{i}}
 </p>
-
 @for(item of ['a','b','c','d']; track item){
     <p>New Syntax Student: {{item}}</p>
   }
-
   <div [ngSwitch]="var1">
     <p *ngSwitchCase="0">var is 0</p>
     <p *ngSwitchCase="1">var is 1</p>
     <p *ngSwitchDefault>default value</p>
   </div>
-
   @switch(var1) {
     @case(0) { <p>new syntax, var is 0</p> }
     @case(1) { <p>new syntax, var is 1</p> }

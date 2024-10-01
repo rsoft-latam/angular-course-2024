@@ -1,23 +1,32 @@
-import { CommonModule } from '@angular/common';
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from "@angular/core";
 
 @Component({
-  selector: 'user-card',
+  selector: "user-card",
   standalone: true,
   imports: [],
-  templateUrl: './user-card.component.html',
-  styleUrl: './user-card.component.scss'
+  templateUrl: "./user-card.component.html",
+  styleUrl: "./user-card.component.scss",
 })
-export class UserCardComponent {
+export class UserCardComponent implements OnInit, OnDestroy {
+  @Input() name: string = "";
+  @Input() email: string = "";
 
-  @Input() name:string = ''
-  @Input() email:string = ''
+  @Output() sendData = new EventEmitter();
 
-  @Output() sendData = new EventEmitter()
-
-  public onSendData(){
-    //console.log('onSendData in child')
-    this.sendData.emit('Hi from child component')
+  constructor() {
+    console.log("user card constructor");
   }
 
+  ngOnInit(): void {
+    console.log("user card on init");
+  }
+
+  ngOnDestroy(): void {
+    console.log('user card Destroy')  
+  }
+
+  public onSendData() {
+    //console.log('onSendData in child')
+    this.sendData.emit("Hi from child component");
+  }
 }
