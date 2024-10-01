@@ -5,8 +5,12 @@
 <p>Only Pares {{ getArray() }}</p>
 
 <button (click)="userCardCreated = !userCardCreated">create and destroy user card</button>
+
+<button (click)="selectedUser = users[0]">change to user 0</button>
+<button (click)="selectedUser = users[1]">change to user 1</button>
+
 @if(userCardCreated) {
-  <user-card name="juan" [email]="'juan@gmail.com'" (sendData)="receiveData($event)">
+  <user-card [name]="selectedUser.name" [email]="selectedUser.email" (sendData)="receiveData($event)">
     <p>My HTML from father</p>
     <button>My button from father</button>
   </user-card>
