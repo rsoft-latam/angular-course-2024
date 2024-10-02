@@ -1,4 +1,18 @@
-import { AfterContentInit, Component, DoCheck, EventEmitter, Input, OnChanges, OnDestroy, OnInit, Output, SimpleChanges } from "@angular/core";
+import {
+  AfterContentInit,
+  AfterViewInit,
+  Component,
+  DoCheck,
+  ElementRef,
+  EventEmitter,
+  Input,
+  OnChanges,
+  OnDestroy,
+  OnInit,
+  Output,
+  SimpleChanges,
+  ViewChild,
+} from "@angular/core";
 import { FormsModule } from "@angular/forms";
 
 @Component({
@@ -8,13 +22,24 @@ import { FormsModule } from "@angular/forms";
   templateUrl: "./user-card.component.html",
   styleUrl: "./user-card.component.scss",
 })
-export class UserCardComponent implements OnInit, OnDestroy, OnChanges, DoCheck, AfterContentInit {
+export class UserCardComponent
+  implements
+    OnInit,
+    OnDestroy,
+    OnChanges,
+    DoCheck,
+    AfterContentInit,
+    AfterViewInit
+{
   @Input() name: string = "";
   @Input() email: string = "";
 
   @Output() sendData = new EventEmitter();
 
-  password:string = ''
+  @ViewChild('buttonTest') buttonTest!: ElementRef
+
+  password: string = "";
+  showButton:boolean = false
 
   constructor() {
     console.log("user card constructor");
@@ -27,22 +52,31 @@ export class UserCardComponent implements OnInit, OnDestroy, OnChanges, DoCheck,
   }
 
   ngOnDestroy(): void {
-    console.log('user card Destroy')  
+    console.log("user card Destroy");
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    console.log('CHANGES:', changes)
+    console.log("CHANGES:", changes);
 
-    this.password = changes['name'].currentValue + ' ' + changes['email'].currentValue + ' PASSWORD'
-
+    this.password =
+      changes["name"].currentValue +
+      " " +
+      changes["email"].currentValue +
+      " PASSWORD";
   }
 
   ngDoCheck(): void {
-   console.log('DO CHECK user card')  
+    console.log("DO CHECK user card");
   }
 
   ngAfterContentInit(): void {
-      console.log('NG AFTER CONTENT INIT')
+    console.log("NG AFTER CONTENT INIT");
+  }
+
+  ngAfterViewInit(): void {
+    console.log('NG AFTER VIEW INIT')
+    console.log('BUTTON TEST', this.buttonTest)   
+    this.buttonTest.nativeElement.textContent = 'aaaaaaaaaaaaaaaaaaaaaa'
   }
 
   public onSendData() {
