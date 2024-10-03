@@ -1,7 +1,7 @@
 import {
+  AfterContentChecked,
   AfterContentInit,
-  afterNextRender,
-  afterRender,
+  AfterViewChecked,
   AfterViewInit,
   Component,
   DoCheck,
@@ -31,7 +31,9 @@ export class UserCardComponent
     OnChanges,
     DoCheck,
     AfterContentInit,
-    AfterViewInit
+    AfterViewInit,
+    AfterContentChecked,
+    AfterViewChecked
 {
   @Input() name: string = "";
   @Input() email: string = "";
@@ -78,14 +80,22 @@ export class UserCardComponent
     console.log("NG AFTER CONTENT INIT");
   }
 
+  ngAfterContentChecked(): void {
+    console.log('AFTER CONTENT CHECKED')
+  }
+
   ngAfterViewInit(): void {
     console.log('NG AFTER VIEW INIT')
     console.log('BUTTON TEST', this.buttonTest)   
 
     if(this.buttonTest){
-      this.buttonTest.nativeElement.textContent = 'button Test in ngAfterViewInit'
+      this.buttonTest.nativeElement.textContent = 'button Test in OnInit'
     }
     
+  }
+
+  ngAfterViewChecked(): void {
+    console.log('NG AFTER VIEW CHECKED')
   }
 
   public onSendData() {
