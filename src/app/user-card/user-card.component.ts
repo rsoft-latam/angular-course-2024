@@ -1,3 +1,4 @@
+import { CommonModule } from "@angular/common";
 import {
   AfterContentChecked,
   AfterContentInit,
@@ -20,7 +21,7 @@ import { FormsModule } from "@angular/forms";
 @Component({
   selector: "user-card",
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, CommonModule],
   templateUrl: "./user-card.component.html",
   styleUrl: "./user-card.component.scss",
 })
@@ -43,7 +44,7 @@ export class UserCardComponent
   @ViewChild('buttonTest', { static: false }) buttonTest!: ElementRef
   @ViewChild('buttonShow', { static: true }) buttonShow!: ElementRef
 
-  password: string = "";
+  password: string = "password";
   showButton:boolean = true
 
   constructor() {

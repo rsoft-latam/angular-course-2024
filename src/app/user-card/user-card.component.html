@@ -1,4 +1,7 @@
-<div class="user-card">
+<div [ngClass]="{
+    'user-card': password === '123',
+    'user-card-black': password === 'hola' 
+}">
     <p>USER CARD COMPONENT</p>
     <p>INPUT NAME: {{ name }}</p>
     <p>INPUT email: {{ email }}</p>
@@ -10,9 +13,6 @@
     @if(showButton){
         <button #buttonTest (click)="onSendData()">send Data</button>
     }
-    
-
-    
 
     <p>PASSWORD = {{password}}</p>
 
