@@ -17,11 +17,12 @@ import {
   ViewChild,
 } from "@angular/core";
 import { FormsModule } from "@angular/forms";
+import { SharedModule } from "../shared/shared.module";
 
 @Component({
   selector: "user-card",
   standalone: true,
-  imports: [FormsModule, CommonModule],
+  imports: [FormsModule, CommonModule, SharedModule],
   templateUrl: "./user-card.component.html",
   styleUrl: "./user-card.component.scss",
 })

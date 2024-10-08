@@ -5,8 +5,9 @@
     <p [ngStyle]="{
         'background-color': password === 'red' ? 'red' : 'yellow' ,
     }">USER CARD COMPONENT</p>
-    <p>INPUT NAME: {{ name }}</p>
-    <p>INPUT email: {{ email }}</p>
+
+    <p [class.user-card]="password === '123'">INPUT NAME: {{ name }}</p>
+    <p [style.background-color]="password === 'red' ? 'red' : 'yellow'">INPUT email: {{ email }}</p>
 
     <input type="text" [(ngModel)]="password">
 
@@ -19,5 +20,11 @@
     <p>PASSWORD = {{password}}</p>
 
     <ng-content></ng-content>
+
+
+
+    <app-navbar></app-navbar>
+    <app-card></app-card>
+    <app-alert></app-alert>
 
 </div>
