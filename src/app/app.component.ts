@@ -5,6 +5,7 @@ import { CalculatorComponent } from "./calculator/calculator.component";
 import { CommonModule } from "@angular/common";
 import { CounterComponent } from "./counter/counter.component";
 import { filter, from, map, tap } from "rxjs";
+import { AppColorsDirective } from "./app-colors.directive";
 
 interface IPerson {
   name: string;
@@ -21,6 +22,7 @@ interface IPerson {
     CalculatorComponent,
     CommonModule,
     CounterComponent,
+    AppColorsDirective
   ],
   templateUrl: "./app.component.html",
   styleUrl: "./app.component.scss",
@@ -100,6 +102,10 @@ export class AppComponent {
     for (let i = 0; i < persons.length; i++) {
       //console.log('person =', persons[i])
     }
+  }
+
+  public getColor(value:string): void {
+    console.log("value: ", value);
   }
 
   //  function sumar(){
