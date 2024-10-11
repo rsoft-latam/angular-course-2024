@@ -4,11 +4,11 @@
 </user-card>
 <button (click)="addVideo()">add new video to youtube</button>
 
-<div  
-[ngColors]="'green'" 
-[defaultColor]="'pink'" 
-(colorClick)="getColor($event)" 
-(colorDoubleCick)="getColor($event)"     
-             style="border: 1px solid orange;">
-  MY CUSTOM ATTRIBUTE DIRECTIVE
+
+
+<button (click)="userCardCreated = !userCardCreated">change userCardCreated</button>
+{{ userCardCreated }}
+<div *ngCreateHtml="userCardCreated" (sendMessage)="getColor($event)">
+  <p>MY CUSTON STRUCTURAL DIRECTIVE</p>
+  <p> EXAMPLE </p>
 </div>
