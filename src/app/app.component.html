@@ -1,14 +1,16 @@
-<user-card [name]="selectedUser.name" [email]="selectedUser.email" (sendData)="receiveData($event)">
-  <p>My HTML from father</p>
-  <button>My button from father</button>
-</user-card>
-<button (click)="addVideo()">add new video to youtube</button>
+<p>PIPES</p>
+
+<P> {{ users | json }} </P>
+<p> {{ 'juan' | uppercase }} </p>
+<p> {{ 'JUAN' | lowercase }} </p>
+<p> {{ 'hola mundo' | titlecase }}</p>
+<p> {{ 'Tue Oct 27 15:35:08 CDT 2009' | date: 'dd/MM/YYYY'  }} </p>
+
+<p> MY FISRT PIPE PURE </p>
+<p>{{ students | pure }}</p>
+<p> MY FIRST PIPE IMPURE</p>
+<p>{{ students | impure }}</p>
 
 
-
-<button (click)="userCardCreated = !userCardCreated">change userCardCreated</button>
-{{ userCardCreated }}
-<div *ngCreateHtml="userCardCreated" (sendMessage)="getColor($event)">
-  <p>MY CUSTON STRUCTURAL DIRECTIVE</p>
-  <p> EXAMPLE </p>
-</div>
+<button (click)="students.push(12)">add neew number</button>
+<button (click)="addNumber()">add neew number in ts</button>

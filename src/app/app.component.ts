@@ -7,6 +7,8 @@ import { CounterComponent } from "./counter/counter.component";
 import { filter, from, map, tap } from "rxjs";
 import { AppColorsDirective } from "./app-colors.directive";
 import { CreateHtmlDirective } from "./create-html.directive";
+import { PurePipe } from "./pure.pipe";
+import { ImpurePipe } from "./impure.pipe";
 
 interface IPerson {
   name: string;
@@ -24,7 +26,9 @@ interface IPerson {
     CommonModule,
     CounterComponent,
     AppColorsDirective,
-    CreateHtmlDirective
+    CreateHtmlDirective,
+    PurePipe,
+    ImpurePipe
   ],
   templateUrl: "./app.component.html",
   styleUrl: "./app.component.scss",
@@ -47,7 +51,7 @@ export class AppComponent {
     lastName: "Perez",
     age: 25,
   };
-  students: number[] = [1, 2, 3, 4, 5, 6];
+  students: number[] = [1, 2, 3, 4, 5, 6,7,8,9];
   parents: number[] = [7, 8, 9, 10];
 
   var1 = 0;
@@ -64,6 +68,15 @@ export class AppComponent {
       console.log("SUSCRIBER 1: ", res);
     });
   }
+
+  public sumPure(a:number, b:number): number {
+    return a + b;
+  }
+
+  public sumImpure(a:number, b:number): number {
+    return a + b + Math.random();
+  }
+
   public sum(...persons: number[]) {
     //return persons[0] + persons[1]
     return persons.reduce(
@@ -132,5 +145,9 @@ export class AppComponent {
   public onResult(event: any) {
     console.log("event from child:", event);
     this.result = event ?? 0;
+  }
+
+  public addNumber() {
+    this.students = [...this.students, 12]
   }
 }
