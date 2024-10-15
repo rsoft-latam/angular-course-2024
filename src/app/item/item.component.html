@@ -1,0 +1,8 @@
+<div style="border: 1px solid red; display: flex; flex-direction: row; gap: 5px;"
+    [ngStyle]="{'background-color': color}">
+    <span>{{item}}</span>
+    @if(showButtons) {
+    <button (click)="onAction('show')">Show</button>
+    <button (click)="onAction('delete')">Delete</button>
+    }
+</div>

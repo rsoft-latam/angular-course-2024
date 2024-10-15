@@ -1,0 +1,9 @@
+<div style="border: 1px solid red;">
+    <div *ngFor="let item of items; let i=index">
+        <app-item [item]="item[value]"
+         (actionEvent)="onAction($event, i, item)"
+         [showButtons]="true" 
+         [color]="item.type === 'student' ? 'blue' : 'orange'">
+        </app-item>
+    </div>
+</div>

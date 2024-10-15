@@ -1,0 +1,12 @@
+<div style="border: 1px solid red">
+  <div *ngIf="messages">
+    <app-search (searchEvent)="onSearch($event)"></app-search>
+    <div *ngFor="let message of messages">
+      <app-item [item]="message"></app-item>
+    </div>
+  </div>
+
+  <div *ngIf="data">
+    <p *ngFor="let item of data">{{ item.title }} : {{ item.value }}</p>
+  </div>
+</div>
