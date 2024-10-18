@@ -63,12 +63,16 @@
 <p>NAVIGATION </p>
 
 
-<button type="button" class="btn btn-light" [routerLink]="'/card'">User Card</button>
+<button type="button" class="btn btn-light" [routerLink]="['card', 8]">User Card param 8</button>
+<button type="button" class="btn btn-light" (click)="goToCard()">User Card param 1</button>
 <button type="button" class="btn btn-dark" [routerLink]="'/cal'">Calculator</button>
 <button type="button" class="btn btn-warning" [routerLink]="'/counter-nav'">Counter</button>
 <button type="button" class="btn btn-success" [routerLink]="'/student/score'">Student Module / score</button>
 <button type="button" class="btn btn-success" [routerLink]="'/student/classmate'">Student Module / classmate</button>
 <button type="button" class="btn btn-danger" [routerLink]="'/student/average'">Student module/ score/average</button>
+
+<button type="button" class="btn btn-secondary" (click)="goToStudentModule()"> from TS to Student Module </button>
+
 <div style="border: 4cqmax solid greenyellow;height: 500px; width: 500px;">
   <router-outlet>
   </router-outlet>

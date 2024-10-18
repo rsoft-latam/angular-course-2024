@@ -18,6 +18,8 @@ import {
 } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import { SharedModule } from "../shared/shared.module";
+import { ActivatedRoute } from "@angular/router";
+import { Subscription } from "rxjs";
 
 @Component({
   selector: "user-card",
@@ -48,8 +50,16 @@ export class UserCardComponent
   password: string = "password";
   showButton:boolean = true
 
-  constructor() {
+  subscription: Subscription = new Subscription();
+
+  constructor(private activatedRoute: ActivatedRoute) {
     //console.log("user card constructor");
+
+    this.subscription.add(this.activatedRoute.params.subscribe((params) => {
+      console.log("PARAMS: ", params);
+    }))
+  
+    console.log('Snapshot: ', this.activatedRoute.snapshot.params )   
   }
 
   ngOnInit(): void {
@@ -62,6 +72,8 @@ export class UserCardComponent
 
   ngOnDestroy(): void {
     //console.log("user card Destroy");
+
+    this.subscription.unsubscribe()
   }
 
   ngOnChanges(changes: SimpleChanges): void {

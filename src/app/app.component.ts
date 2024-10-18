@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { RouterOutlet, RouterLink } from "@angular/router";
+import { RouterOutlet, RouterLink, Router } from "@angular/router";
 import { UserCardComponent } from "./user-card/user-card.component";
 import { CalculatorComponent } from "./calculator/calculator.component";
 import { CommonModule } from "@angular/common";
@@ -65,7 +65,7 @@ export class AppComponent {
 
   youtube = from([1, 2, 3, 4, 5, 6]);
 
-  constructor() {
+  constructor(private router: Router) {
     const { name, age } = this.person;
     let both = [...this.students, ...this.parents];
 
@@ -155,4 +155,13 @@ export class AppComponent {
   public addNumber() {
     this.students = [...this.students, 12]
   }
+
+  public goToStudentModule() {
+    this.router.navigate(['student'])
+  }
+
+  public goToCard() {
+    this.router.navigate(['card', 1])
+  }
+
 }
