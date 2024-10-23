@@ -36,6 +36,11 @@
         <input type="text" ngModel name="phoneF">
         <button type="submit">send data</button>
         <button type="reset">reset</button>
+
+        <p>REACTIVE FORM</p>
+        <input type="text" [formControl]="scoreControl">
+        <button (click)="onPrintScore()">print score</button>
+
       </form>
     </mat-card-content>
     <mat-card-actions>
