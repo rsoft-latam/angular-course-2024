@@ -23,11 +23,20 @@
     </mat-card-header>
     <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
     <mat-card-content>
-      <p>
-        The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-        A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-        bred for hunting.
-      </p>
+      <form #testForm="ngForm" (ngSubmit)="onSubmit(testForm)">
+        <p>name</p>
+        <input type="text" ngModel name="nameF">
+        <p>lastName</p>
+        <input type="text" ngModel name="lastNameF">
+        <p>age</p>
+        <input type="text" ngModel name="ageF">
+        <p>city</p>
+        <input type="text" ngModel name="cityF">
+        <p>phone</p>
+        <input type="text" ngModel name="phoneF">
+        <button type="submit">send data</button>
+        <button type="reset">reset</button>
+      </form>
     </mat-card-content>
     <mat-card-actions>
       <button mat-button>LIKE</button>
@@ -38,7 +47,6 @@
   <h1 class="text-sm font-bold underline text-red-800">
     Hello world TAILWIND
   </h1>
-
 
   <div class="mb-3">
     <label for="exampleFormControlInput1" class="form-label">Email address</label>

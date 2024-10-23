@@ -11,6 +11,7 @@ import { PurePipe } from "./pure.pipe";
 import { ImpurePipe } from "./impure.pipe";
 import {MatCardModule} from '@angular/material/card';
 import { MatButtonModule } from "@angular/material/button";
+import { FormsModule } from "@angular/forms";
 
 interface IPerson {
   name: string;
@@ -33,12 +34,18 @@ interface IPerson {
     PurePipe,
     ImpurePipe,
     MatCardModule,
-    MatButtonModule
+    MatButtonModule,
+    FormsModule
   ],
   templateUrl: "./app.component.html",
   styleUrl: "./app.component.scss",
 })
 export class AppComponent {
+
+  name:string = 'testName'
+  lastName:string = ''
+
+
   users = [
     { name: "abc", email: "abc@gmail.com" },
     { name: "dfg", email: "dfg@gmail.com" },
@@ -166,6 +173,10 @@ export class AppComponent {
 
   public onCalculator(){
     this.router.navigate(['cal'], {queryParams: {name: 'John', age: 20}})
+  }
+  
+  onSubmit(data:any){
+    console.log('TEMPLATE DRIVEN FORM: ', data)
   }
 
 }
