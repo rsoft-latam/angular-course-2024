@@ -1,5 +1,6 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'calculator',
@@ -19,7 +20,7 @@ import { FormsModule } from '@angular/forms';
   `,
   styleUrl: './calculator.component.scss'
 })
-export class CalculatorComponent {
+export class CalculatorComponent implements OnInit {
 
   box1Value:number = 0
   box2Value:number = 0
@@ -27,6 +28,16 @@ export class CalculatorComponent {
   @Output() sum = new EventEmitter()
   @Output() mul = new EventEmitter()
   @Output() reset = new EventEmitter()
+
+  constructor(private _activatedRoute: ActivatedRoute) { }
+
+  ngOnInit(): void {
+      this._activatedRoute.queryParams.subscribe(params => {
+        console.log('query params: ', params)
+      })
+
+      console.log('query params snapshot: ', this._activatedRoute.snapshot.queryParams)
+  }
 
   public onSum(){
     this.sum.emit(Number(this.box1Value) + Number(this.box2Value))

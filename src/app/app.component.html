@@ -65,7 +65,19 @@
 
 <button type="button" class="btn btn-light" [routerLink]="['card', 8]">User Card param 8</button>
 <button type="button" class="btn btn-light" (click)="goToCard()">User Card param 1</button>
-<button type="button" class="btn btn-dark" [routerLink]="'/cal'">Calculator</button>
+<button 
+type="button" 
+class="btn btn-dark" 
+[routerLink]="'/cal'" 
+[queryParams]="{ name: 'test',  lastName: 'perez'}">
+Calculator QP from HTML
+</button>
+<button 
+type="button" 
+class="btn btn-dark"
+(click)="onCalculator()">
+Calculator QP from TS
+</button>
 <button type="button" class="btn btn-warning" [routerLink]="'/counter-nav'">Counter</button>
 <button type="button" class="btn btn-success" [routerLink]="'/student/score'">Student Module / score</button>
 <button type="button" class="btn btn-success" [routerLink]="'/student/classmate'">Student Module / classmate</button>
