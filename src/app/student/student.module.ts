@@ -5,6 +5,7 @@ import { StudentRoutingModule } from './student-routing.module';
 import { ScoreComponent } from './score/score.component';
 import { ClassmateComponent } from './classmate/classmate.component';
 import { AverageComponent } from './average/average.component';
+import { ExamService } from './exam.service';
 
 
 @NgModule({
@@ -16,6 +17,9 @@ import { AverageComponent } from './average/average.component';
   imports: [
     CommonModule,
     StudentRoutingModule
+  ],
+  providers: [
+    ExamService
   ]
 })
 export class StudentModule { }
