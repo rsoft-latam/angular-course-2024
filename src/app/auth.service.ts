@@ -5,8 +5,8 @@ import { Injectable } from '@angular/core';
 })
 export class AuthService {
 
-  private token:string = ''
-  private user: string = ''
+  private token!:string
+  private user!: string
 
   constructor() { }
 

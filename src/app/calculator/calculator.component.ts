@@ -1,12 +1,12 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'calculator',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, RouterLink],
   template: `
     <div class="calculator">
       <p>Calculator</p>
@@ -17,6 +17,7 @@ import { AuthService } from '../auth.service';
           <button class="mul" (click)="onMul()">Mul</button>
           <button class="reset" (click)="onReset()">Reset</button>
           <button class="reset" (click)="onLogin()">Login</button>
+          <button class="reset" [routerLink]="'/student'">Login without token</button>
       </div>
     </div>
   `,
@@ -32,7 +33,8 @@ export class CalculatorComponent implements OnInit {
   @Output() reset = new EventEmitter()
 
   constructor(private _activatedRoute: ActivatedRoute,
-              private _authService: AuthService
+              private _authService: AuthService,
+              private _router: Router
   ) { }
 
   ngOnInit(): void {
@@ -59,6 +61,7 @@ export class CalculatorComponent implements OnInit {
 
   onLogin(){
     this._authService.login()
+    this._router.navigate(['/student'])
   }
 
 }
