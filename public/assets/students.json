@@ -1,0 +1,123 @@
+[
+    {
+      "id": 1,
+      "firstName": "John",
+      "lastName": "Doe",
+      "age": 20,
+      "gender": "Male",
+      "email": "john.doe@example.com",
+      "phone": "555-1234",
+      "major": "Computer Science",
+      "gpa": 3.8,
+      "graduationYear": 2025
+    },
+    {
+      "id": 2,
+      "firstName": "Jane",
+      "lastName": "Smith",
+      "age": 22,
+      "gender": "Female",
+      "email": "jane.smith@example.com",
+      "phone": "555-5678",
+      "major": "Biology",
+      "gpa": 3.6,
+      "graduationYear": 2024
+    },
+    {
+      "id": 3,
+      "firstName": "Michael",
+      "lastName": "Johnson",
+      "age": 21,
+      "gender": "Male",
+      "email": "michael.johnson@example.com",
+      "phone": "555-8765",
+      "major": "Physics",
+      "gpa": 3.7,
+      "graduationYear": 2025
+    },
+    {
+      "id": 4,
+      "firstName": "Emily",
+      "lastName": "Williams",
+      "age": 23,
+      "gender": "Female",
+      "email": "emily.williams@example.com",
+      "phone": "555-4321",
+      "major": "Chemistry",
+      "gpa": 3.9,
+      "graduationYear": 2024
+    },
+    {
+      "id": 5,
+      "firstName": "Daniel",
+      "lastName": "Brown",
+      "age": 20,
+      "gender": "Male",
+      "email": "daniel.brown@example.com",
+      "phone": "555-6789",
+      "major": "Mathematics",
+      "gpa": 3.5,
+      "graduationYear": 2025
+    },
+    {
+      "id": 6,
+      "firstName": "Sophia",
+      "lastName": "Jones",
+      "age": 21,
+      "gender": "Female",
+      "email": "sophia.jones@example.com",
+      "phone": "555-9876",
+      "major": "Engineering",
+      "gpa": 3.8,
+      "graduationYear": 2025
+    },
+    {
+      "id": 7,
+      "firstName": "James",
+      "lastName": "Miller",
+      "age": 22,
+      "gender": "Male",
+      "email": "james.miller@example.com",
+      "phone": "555-2468",
+      "major": "Business",
+      "gpa": 3.4,
+      "graduationYear": 2024
+    },
+    {
+      "id": 8,
+      "firstName": "Olivia",
+      "lastName": "Davis",
+      "age": 20,
+      "gender": "Female",
+      "email": "olivia.davis@example.com",
+      "phone": "555-1357",
+      "major": "English",
+      "gpa": 3.6,
+      "graduationYear": 2025
+    },
+    {
+      "id": 9,
+      "firstName": "Alexander",
+      "lastName": "Garcia",
+      "age": 23,
+      "gender": "Male",
+      "email": "alexander.garcia@example.com",
+      "phone": "555-9753",
+      "major": "History",
+      "gpa": 3.7,
+      "graduationYear": 2024
+    },
+    {
+      "id": 10,
+      "firstName": "Isabella",
+      "lastName": "Martinez",
+      "age": 21,
+      "gender": "Female",
+      "email": "isabella.martinez@example.com",
+      "phone": "555-8642",
+      "major": "Psychology",
+      "gpa": 3.9,
+      "graduationYear": 2025
+    }
+  ]
+  
