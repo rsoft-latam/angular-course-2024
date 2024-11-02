@@ -6,7 +6,9 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "firebase:deploy": "ng build && firebase deploy",
+    "s3:deploy": "ng build && aws s3 sync ./dist/browser s3://angular-course-2024-project --profile rsoft-latam"
   },
   "private": true,
   "dependencies": {
