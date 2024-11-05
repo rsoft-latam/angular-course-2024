@@ -1,0 +1,38 @@
+<div class="flex items-center justify-center h-screen bg-gray-100">
+    <div class="flex max-w-4xl shadow-lg rounded-lg overflow-hidden bg-white">
+      <!-- Lado Izquierdo -->
+      <div class="flex-1 bg-gradient-to-b from-blue-500 to-blue-700 p-8 flex flex-col items-center justify-center text-white">
+        <h1 class="text-5xl font-bold mb-4">B</h1>
+        <p class="text-lg font-semibold mb-2">BLUEBACK</p>
+        <p class="text-center text-sm opacity-75">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </p>
+      </div>
+  
+      <!-- Lado Derecho -->
+      <div class="flex-1 p-8 bg-white">
+        <h2 class="text-2xl font-semibold text-blue-700 mb-2">Welcome</h2>
+        <p class="text-gray-500 mb-8">Login in to your account to continue</p>
+  
+        <form class="space-y-4">
+          <input type="email" placeholder="Email" class="w-full px-4 py-2 rounded-md bg-gray-200 text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+          <input type="password" placeholder="Password" class="w-full px-4 py-2 rounded-md bg-gray-200 text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+  
+          <div class="text-right">
+            <a href="#" class="text-sm text-gray-500 hover:text-blue-500">Forgot your password?</a>
+          </div>
+  
+          <button type="submit"
+          (click)="onLogin()"
+          class="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 rounded-md">
+            LOG IN
+          </button>
+        </form>
+  
+        <p class="mt-8 text-center text-gray-500">
+          Don’t have an account? <a href="#" class="text-blue-500 font-semibold hover:underline">Sign Up</a>
+        </p>
+      </div>
+    </div>
+  </div>
+  

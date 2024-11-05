@@ -4,8 +4,14 @@ import { CalculatorComponent } from './calculator/calculator.component';
 import { AuthGuard } from './guards/auth.guard';
 import { GuardForm } from './guards/guard-form.guard';
 import { LoadGuard } from './guards/load.guard';
+import { LoginComponent } from './login/login.component';
 
 export const routes: Routes = [
+    {
+        path: '',
+        component: LoginComponent,
+        title: 'Login'
+    },
     {
         path: 'card/:studentId',
         component: UserCardComponent,
